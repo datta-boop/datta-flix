@@ -101,17 +101,17 @@
     "tagline": "Watch your favorite shows and movies for free with no ads ever! (っ'ヮ'c)"
   },
   "global": {
-    "name": "sudo-flix",
+    "name": "Datta-Flix",
     "pages": {
       "about": "About",
       "dmca": "DMCA",
       "discover": "Discover",
       "support": "Support",
-      "login": "Login",
+      "login": "Board the Ship",
       "onboarding": "Setup",
-      "pagetitle": "{{title}} - sudo-flix",
-      "register": "Register",
-      "settings": "Settings",
+      "pagetitle": "{{title}} — Datta-Flix",
+      "register": "Join the Crew",
+      "settings": "Helm & Riggin'",
       "jip": "Jip"
     }
   },
@@ -131,26 +131,26 @@
       "loading": "Loading...",
       "noResults": "We couldn't find anything :(",
       "placeholder": {
-        "default": "What do you want to watch?",
+        "default": "Chart yer course through cinema...",
         "extra": [
-          "What are you in the mood for?",
-          "Should we delete your browser history?",
-          "What do you want to stream?",
-          "Sudo-Flix is the best site ever!",
-          "What's on your watchlist today?",
-          "How was your day?",
-          "My bad the site never works...",
-          "Isn't sudo-flix just the best?",
-          ">ᴗ<"
+          "What voyage shall we embark upon?",
+          "The seven streams await, matey!",
+          "Seek yer treasure amongst the titles...",
+          "Which tale shall ye plunder tonight?",
+          "Ready to sail the silver screen?",
+          "Aye, what be yer pleasure this eve?",
+          "The crow's nest spots many a film...",
+          "Hoist the colors and search away!",
+          "A fine night fer a good story!"
         ]
       },
       "empty": {
-        "default": "Welcome, find media to watch here!",
+        "default": "Yer chart be empty, matey!",
         "extra": [
-          "There's nothing here :(",
-          "So empty...",
-          "Such emptiness.",
-          "Hi new user :3"
+          "Nothing in the hold yet...",
+          "The seas be empty here...",
+          "No treasure found, savvy?",
+          "Even Davy Jones had more..."
         ]
       },
       "sectionTitle": "Search results",
@@ -160,32 +160,33 @@
     "titles": {
       "day": {
         "default": "What would you like to watch this afternoon?",
-        "extra": ["Have you seen Blazing Saddles?"],
-        "extra": ["Welcome to Sudo-Flix!"],
-        "extra": [" /ᐠ>ヮ<ᐟ\\ฅ"],
-        "extra": ["Viva la sudo-flix!"]
+        "extra": [
+          "Viva la sudo-flix!"
+        ]
       },
       "morning": {
         "default": "What would you like to watch this morning?",
-        "extra": ["Can't go wrong with Friends"],
-        "extra": ["I hear The Expanse is popular"],
-        "extra": ["\"૮₍  ˶•⤙•˶ ₎ა"],
-        "extra": ["Viva la sudo-flix!"]
+        "extra": [
+          "Viva la sudo-flix!"
+        ]
       },
       "night": {
         "default": "What would you like to watch tonight?",
-        "extra": ["Rick & Morty is great with friends!"],
-        "extra": ["Go smoke and watch The Simpsons!"],
-        "extra": ["(づ ᴗ _ᴗ)づ♡"],
-        "extra": ["Viva la sudo-flix!"]
+        "extra": [
+          "Viva la sudo-flix!"
+        ]
       },
       "420": {
         "default": "What would you like to watch this 4/20?",
-        "extra": ["Happy 4/20 🥳!"]
+        "extra": [
+          "Happy 4/20 🥳!"
+        ]
       },
       "69": {
         "default": "Up for something spicy?",
-        "extra": ["Happy 69 day 😘!"]
+        "extra": [
+          "Happy 69 day 😘!"
+        ]
       }
     }
   },
@@ -208,7 +209,11 @@
       "settings": "Settings",
       "support": "Support",
       "discover": "Discover"
-    }
+    },
+    "home": "The Harbor",
+    "discover": "Explore the Seas",
+    "search": "Chart Yer Course",
+    "watchlist": "Yer Treasure Chest"
   },
   "notFound": {
     "badge": "Not found",
