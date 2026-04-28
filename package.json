@@ -142,6 +142,7 @@
       "@babel/traverse@<7.23.2": ">=7.23.2",
       "crypto-js@<4.2.0": ">=4.2.0",
       "rollup": "npm:@rollup/wasm-node"
-    }
+    },
+    "neverBuiltDependencies": ["@movie-web/providers"]
   }
 }
