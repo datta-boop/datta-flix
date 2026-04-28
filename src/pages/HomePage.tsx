@@ -210,13 +210,13 @@ export function HomePage() {
             {/* Empty state */}
             {!showBookmarks && continueWatching.length === 0 && (
               <div className="flex flex-col items-center justify-center py-20 text-center">
-                <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-surface-600 ring-1 ring-[#D4A843]/20">
+                <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#F0F0F0] ring-1 ring-black/5">
                   <svg
                     width="32"
                     height="32"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#D4A843"
+                    stroke="#111111"
                     strokeWidth="1.5"
                     aria-hidden="true"
                   >
@@ -224,16 +224,16 @@ export function HomePage() {
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
                   </svg>
                 </div>
-                <p className="mb-2 text-xl font-bold text-warm-100">
+                <p className="mb-2 text-xl font-bold text-[#111111]">
                   Nothing saved yet
                 </p>
-                <p className="mb-8 text-sm text-warm-500 max-w-xs">
+                <p className="mb-8 text-sm text-[#777777] max-w-xs">
                   Search for something above, or explore what&apos;s trending.
                 </p>
                 <button
                   type="button"
                   onClick={() => handleClick("/discover")}
-                  className="inline-flex items-center gap-2 rounded-full border border-[#D4A843]/30 bg-[#D4A843]/10 px-6 py-3 text-sm font-semibold text-[#D4A843] hover:bg-[#D4A843]/20 active:scale-95 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#E0E0E0] bg-[#F0F0F0] px-6 py-3 text-sm font-semibold text-[#111111] hover:bg-[#E8E8E8] active:scale-95 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]"
                 >
                   Discover Content
                 </button>

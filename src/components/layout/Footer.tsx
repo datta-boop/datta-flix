@@ -7,7 +7,6 @@ import { Icon, Icons } from "@/components/Icon";
 import { BrandPill } from "@/components/layout/BrandPill";
 import { WideContainer } from "@/components/layout/WideContainer";
 import { shouldHaveDmcaPage } from "@/pages/Dmca";
-import { conf } from "@/setup/config";
 
 // to and href are mutually exclusive
 type FooterLinkProps = RequireExactlyOne<
@@ -75,15 +74,6 @@ export function Footer() {
           <p className="mt-3">{t("footer.legal.disclaimerText")}</p>
         </div>
         <div className="flex flex-wrap gap-[0.5rem] -ml-3">
-          <FooterLink icon={Icons.GITHUB} href={conf().GITHUB_LINK}>
-            {t("footer.links.github")}
-          </FooterLink>
-          <FooterLink icon={Icons.DISCORD} href={conf().DISCORD_LINK}>
-            {t("footer.links.discord")}
-          </FooterLink>
-          <FooterLink icon={Icons.TWITTER} href={conf().TWITTER_LINK}>
-            {t("footer.links.twitter")}
-          </FooterLink>
           <div className="inline md:hidden">
             <Dmca />
           </div>

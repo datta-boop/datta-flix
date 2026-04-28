@@ -2,11 +2,8 @@ import classNames from "classnames";
 import { Link, To, useNavigate } from "react-router-dom";
 
 import { NoUserAvatar, UserAvatar } from "@/components/Avatar";
-import { IconPatch } from "@/components/buttons/IconPatch";
-import { Icons } from "@/components/Icon";
 import { LinksDropdown } from "@/components/LinksDropdown";
 import { useAuth } from "@/hooks/auth/useAuth";
-import { conf } from "@/setup/config";
 import { useBannerSize } from "@/stores/banner";
 
 import { BrandPill } from "./BrandPill";
@@ -30,13 +27,13 @@ export function Navigation(props: NavigationProps) {
 
   return (
     <>
-      {/* Subtle gold shimmer line */}
+      {/* Thin top border line */}
       {!props.noLightbar && (
         <div
           className="absolute inset-x-0 top-0 pointer-events-none z-10"
           style={{ top: `${bannerHeight}px` }}
         >
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D4A843]/30 to-transparent animate-gold-pulse" />
+          <div className="h-px w-full bg-[#E0E0E0]" />
         </div>
       )}
 
@@ -48,9 +45,7 @@ export function Navigation(props: NavigationProps) {
         <div
           className={classNames(
             "fixed left-0 right-0 h-20 transition-all duration-300",
-            bg
-              ? "bg-[#090D1C]/90 backdrop-blur-md border-b border-[#D4A843]/10"
-              : "",
+            bg ? "bg-white/95 backdrop-blur-md border-b border-[#E0E0E0]" : "",
           )}
         />
       </div>
@@ -70,31 +65,12 @@ export function Navigation(props: NavigationProps) {
               >
                 <BrandPill clickable header />
               </Link>
-              <a
-                href={conf().DISCORD_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="text-warm-400 hover:text-[#D4A843] tabbable rounded-full transition-colors"
-                aria-label="Discord"
-              >
-                <IconPatch icon={Icons.DISCORD} clickable downsized />
-              </a>
-              <a
-                href={conf().GITHUB_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="text-warm-400 hover:text-[#D4A843] tabbable rounded-full transition-colors"
-                aria-label="GitHub"
-              >
-                <IconPatch icon={Icons.GITHUB} clickable downsized />
-              </a>
               <button
                 type="button"
                 onClick={() => handleClick("/discover")}
-                className="text-warm-400 hover:text-[#D4A843] tabbable rounded-full transition-colors"
-                aria-label="Discover"
+                className="hidden sm:flex items-center gap-1.5 text-sm font-medium text-[#555555] hover:text-[#111111] tabbable rounded px-2 py-1 transition-colors"
               >
-                <IconPatch icon={Icons.RISING_STAR} clickable downsized />
+                Discover
               </button>
             </div>
 

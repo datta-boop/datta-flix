@@ -10,15 +10,15 @@ export function RailCardSkeleton() {
   return (
     <div className="flex-none w-36 sm:w-44">
       <div
-        className="w-full rounded-xl bg-surface-600 animate-shimmer"
+        className="w-full rounded-xl animate-shimmer"
         style={{
           paddingBottom: "150%",
           backgroundImage:
-            "linear-gradient(90deg, #10142C 0%, #1E2848 50%, #10142C 100%)",
+            "linear-gradient(90deg, #EBEBEB 0%, #F5F5F5 50%, #EBEBEB 100%)",
           backgroundSize: "200% 100%",
         }}
       />
-      <div className="mt-2 h-3 w-3/4 rounded bg-surface-500" />
+      <div className="mt-2 h-3 w-3/4 rounded bg-[#E8E8E8]" />
     </div>
   );
 }
@@ -46,12 +46,11 @@ export function ContentRail({ title, icon, children }: ContentRailProps) {
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          {/* Gold accent bar */}
           <span
-            className="block h-6 w-1 rounded-full bg-[#D4A843]"
+            className="block h-6 w-1 rounded-full bg-[#111111]"
             aria-hidden="true"
           />
-          <h2 className="flex items-center gap-2 text-lg font-bold text-warm-100">
+          <h2 className="flex items-center gap-2 text-lg font-bold text-[#111111]">
             {icon && <span aria-hidden="true">{icon}</span>}
             {title}
           </h2>
@@ -64,7 +63,7 @@ export function ContentRail({ title, icon, children }: ContentRailProps) {
             aria-label={`Scroll ${title} left`}
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-600 text-warm-300 transition-all hover:bg-surface-400 hover:text-[#D4A843] disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843]"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F0F0F0] text-[#555555] transition-all hover:bg-[#E0E0E0] hover:text-[#111111] disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]"
           >
             <svg
               aria-hidden="true"
@@ -83,7 +82,7 @@ export function ContentRail({ title, icon, children }: ContentRailProps) {
             aria-label={`Scroll ${title} right`}
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-600 text-warm-300 transition-all hover:bg-surface-400 hover:text-[#D4A843] disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843]"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F0F0F0] text-[#555555] transition-all hover:bg-[#E0E0E0] hover:text-[#111111] disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]"
           >
             <svg
               aria-hidden="true"
@@ -107,7 +106,7 @@ export function ContentRail({ title, icon, children }: ContentRailProps) {
           className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 transition-opacity duration-200"
           style={{
             opacity: canScrollLeft ? 1 : 0,
-            background: "linear-gradient(to right, #090D1C, transparent)",
+            background: "linear-gradient(to right, #FFFFFF, transparent)",
           }}
         />
         {/* Right fade */}
@@ -115,7 +114,7 @@ export function ContentRail({ title, icon, children }: ContentRailProps) {
           className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 transition-opacity duration-200"
           style={{
             opacity: canScrollRight ? 1 : 0,
-            background: "linear-gradient(to left, #090D1C, transparent)",
+            background: "linear-gradient(to left, #FFFFFF, transparent)",
           }}
         />
 

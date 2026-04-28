@@ -27,7 +27,7 @@ export function RailCard({ media, percentage }: RailCardProps) {
     <div className="group flex-none w-36 sm:w-44 cursor-pointer">
       {/* Poster */}
       <div
-        className="relative w-full overflow-hidden rounded-xl bg-surface-600 ring-1 ring-white/5 transition-all duration-300 group-hover:ring-[#D4A843]/60 group-hover:shadow-lg group-hover:shadow-[#D4A843]/10 group-hover:scale-[1.03]"
+        className="relative w-full overflow-hidden rounded-xl bg-[#EBEBEB] ring-1 ring-black/5 transition-all duration-300 group-hover:ring-black/20 group-hover:shadow-lg group-hover:shadow-black/10 group-hover:scale-[1.03]"
         style={{ paddingBottom: "150%" }}
       >
         {media.poster ? (
@@ -38,7 +38,7 @@ export function RailCard({ media, percentage }: RailCardProps) {
             loading="lazy"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-surface-500">
+          <div className="absolute inset-0 flex items-center justify-center bg-[#F0F0F0]">
             <svg
               width="32"
               height="32"
@@ -46,7 +46,7 @@ export function RailCard({ media, percentage }: RailCardProps) {
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
-              className="text-surface-300"
+              className="text-[#BBBBBB]"
             >
               <rect x="2" y="2" width="20" height="20" rx="3" />
               <circle cx="8.5" cy="8.5" r="1.5" />
@@ -56,13 +56,13 @@ export function RailCard({ media, percentage }: RailCardProps) {
         )}
 
         {/* Play overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-surface-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#D4A843] shadow-lg">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-lg">
             <svg
               width="16"
               height="16"
               viewBox="0 0 24 24"
-              fill="#090D1C"
+              fill="#111111"
               aria-hidden="true"
             >
               <path d="M8 5v14l11-7z" />
@@ -72,9 +72,9 @@ export function RailCard({ media, percentage }: RailCardProps) {
 
         {/* Progress bar */}
         {percentage !== undefined && (
-          <div className="absolute bottom-0 inset-x-0 h-1 bg-surface-700">
+          <div className="absolute bottom-0 inset-x-0 h-1 bg-black/20">
             <div
-              className="h-full bg-[#D4A843] rounded-full"
+              className="h-full bg-[#111111] rounded-full"
               style={{ width: `${Math.min(100, Math.round(percentage))}%` }}
             />
           </div>
@@ -82,8 +82,8 @@ export function RailCard({ media, percentage }: RailCardProps) {
 
         {/* Unreleased badge */}
         {!released && (
-          <div className="absolute top-2 right-2 rounded-md bg-surface-700/90 px-1.5 py-0.5">
-            <span className="text-[10px] font-semibold text-warm-400">
+          <div className="absolute top-2 right-2 rounded-md bg-black/60 px-1.5 py-0.5">
+            <span className="text-[10px] font-semibold text-white/80">
               Soon
             </span>
           </div>
@@ -91,7 +91,7 @@ export function RailCard({ media, percentage }: RailCardProps) {
       </div>
 
       {/* Title */}
-      <p className="mt-2 line-clamp-2 text-xs font-medium text-warm-300 group-hover:text-[#D4A843] transition-colors duration-200 leading-snug">
+      <p className="mt-2 line-clamp-2 text-xs font-medium text-[#555555] group-hover:text-[#111111] transition-colors duration-200 leading-snug">
         {media.title}
       </p>
     </div>
@@ -102,7 +102,7 @@ export function RailCard({ media, percentage }: RailCardProps) {
     <Link
       to={url}
       tabIndex={-1}
-      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843] rounded-xl"
+      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] rounded-xl"
     >
       {inner}
     </Link>

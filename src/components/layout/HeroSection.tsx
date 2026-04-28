@@ -13,25 +13,25 @@ interface HeroSectionProps {
 function StarRating({ rating }: { rating: number }) {
   return (
     <span className="flex items-center gap-1.5 text-sm">
-      <span className="text-[#D4A843]">★</span>
-      <span className="text-warm-200 tabular-nums">{rating.toFixed(1)}</span>
-      <span className="text-warm-500 text-xs">/ 10</span>
+      <span className="text-yellow-400">★</span>
+      <span className="text-white/90 tabular-nums">{rating.toFixed(1)}</span>
+      <span className="text-white/50 text-xs">/ 10</span>
     </span>
   );
 }
 
 function HeroSkeleton() {
   return (
-    <div className="relative h-[72vh] min-h-[500px] max-h-[780px] w-full overflow-hidden rounded-2xl bg-surface-600 animate-pulse">
-      <div className="absolute inset-0 bg-gradient-to-r from-surface-800 via-surface-700/50 to-transparent" />
+    <div className="relative h-[72vh] min-h-[500px] max-h-[780px] w-full overflow-hidden rounded-2xl bg-[#EBEBEB] animate-pulse">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#E0E0E0] via-[#EBEBEB]/50 to-transparent" />
       <div className="absolute bottom-0 left-0 p-10 space-y-4">
-        <div className="h-5 w-40 rounded-full bg-surface-400" />
-        <div className="h-12 w-80 rounded-xl bg-surface-400" />
-        <div className="h-4 w-96 rounded bg-surface-400" />
-        <div className="h-4 w-64 rounded bg-surface-400" />
+        <div className="h-5 w-40 rounded-full bg-[#D8D8D8]" />
+        <div className="h-12 w-80 rounded-xl bg-[#D8D8D8]" />
+        <div className="h-4 w-96 rounded bg-[#D8D8D8]" />
+        <div className="h-4 w-64 rounded bg-[#D8D8D8]" />
         <div className="flex gap-3 mt-6">
-          <div className="h-11 w-36 rounded-full bg-surface-400" />
-          <div className="h-11 w-32 rounded-full bg-surface-400" />
+          <div className="h-11 w-36 rounded-full bg-[#D8D8D8]" />
+          <div className="h-11 w-32 rounded-full bg-[#D8D8D8]" />
         </div>
       </div>
     </div>
@@ -97,12 +97,9 @@ export function HeroSection({ items, loading }: HeroSectionProps) {
         />
       ))}
 
-      {/* Van Gogh gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#090D1C] via-[#090D1C]/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#090D1C]/95 via-[#090D1C]/30 to-transparent" />
-
-      {/* Subtle golden shimmer at top edge */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4A843]/30 to-transparent" />
+      {/* Gradient overlays for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
 
       {/* Content */}
       <div
@@ -111,23 +108,23 @@ export function HeroSection({ items, loading }: HeroSectionProps) {
       >
         {/* Type + rating row */}
         <div className="mb-3 flex flex-wrap items-center gap-3">
-          <span className="inline-flex items-center rounded-full border border-[#D4A843]/40 bg-[#D4A843]/10 px-3 py-1 text-xs font-semibold text-[#D4A843] backdrop-blur-sm">
+          <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
             {item.type === "movie" ? "Film" : "Series"}
           </span>
           {item.rating ? <StarRating rating={item.rating} /> : null}
           {item.year ? (
-            <span className="text-warm-500 text-sm">{item.year}</span>
+            <span className="text-white/60 text-sm">{item.year}</span>
           ) : null}
         </div>
 
         {/* Title */}
-        <h1 className="mb-3 max-w-2xl text-4xl sm:text-6xl font-black text-warm-50 leading-tight tracking-tight drop-shadow-2xl">
+        <h1 className="mb-3 max-w-2xl text-4xl sm:text-6xl font-black text-white leading-tight tracking-tight drop-shadow-2xl">
           {item.title}
         </h1>
 
         {/* Overview */}
         {item.overview ? (
-          <p className="mb-8 max-w-lg text-sm sm:text-base text-warm-300 line-clamp-2 leading-relaxed">
+          <p className="mb-8 max-w-lg text-sm sm:text-base text-white/75 line-clamp-2 leading-relaxed">
             {item.overview}
           </p>
         ) : null}
@@ -136,7 +133,7 @@ export function HeroSection({ items, loading }: HeroSectionProps) {
         <div className="flex flex-wrap items-center gap-3">
           <Link
             to={playUrl}
-            className="inline-flex items-center gap-2.5 rounded-full bg-[#D4A843] px-7 py-3 text-sm font-bold text-[#090D1C] shadow-lg shadow-[#D4A843]/20 hover:bg-[#E0B860] active:scale-95 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843]"
+            className="inline-flex items-center gap-2.5 rounded-full bg-white px-7 py-3 text-sm font-bold text-[#111111] shadow-lg shadow-black/20 hover:bg-white/90 active:scale-95 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <svg
               aria-hidden="true"
@@ -151,7 +148,7 @@ export function HeroSection({ items, loading }: HeroSectionProps) {
           </Link>
           <Link
             to={playUrl}
-            className="inline-flex items-center gap-2 rounded-full border border-warm-50/20 bg-surface-800/60 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-warm-100 hover:bg-surface-600/80 active:scale-95 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-warm-50/40"
+            className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/30 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-white hover:bg-black/50 active:scale-95 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
             <svg
               aria-hidden="true"
@@ -187,10 +184,10 @@ export function HeroSection({ items, loading }: HeroSectionProps) {
               type="button"
               onClick={() => goTo(i)}
               className={classNames(
-                "rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843]",
+                "rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white",
                 i === current
-                  ? "bg-[#D4A843] w-6 h-2"
-                  : "bg-warm-50/30 hover:bg-warm-50/60 w-2 h-2",
+                  ? "bg-white w-6 h-2"
+                  : "bg-white/30 hover:bg-white/60 w-2 h-2",
               )}
             />
           ))}
@@ -202,7 +199,7 @@ export function HeroSection({ items, loading }: HeroSectionProps) {
         type="button"
         aria-label="Previous slide"
         onClick={() => goTo((current - 1 + featured.length) % featured.length)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-surface-800/50 text-warm-100 opacity-0 group-hover:opacity-100 backdrop-blur-sm hover:bg-surface-600/80 transition-all duration-200 focus:outline-none focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[#D4A843]"
+        className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 backdrop-blur-sm hover:bg-black/60 transition-all duration-200 focus:outline-none focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-white"
       >
         <svg
           aria-hidden="true"
@@ -220,7 +217,7 @@ export function HeroSection({ items, loading }: HeroSectionProps) {
         type="button"
         aria-label="Next slide"
         onClick={() => goTo((current + 1) % featured.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-surface-800/50 text-warm-100 opacity-0 group-hover:opacity-100 backdrop-blur-sm hover:bg-surface-600/80 transition-all duration-200 focus:outline-none focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[#D4A843]"
+        className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 backdrop-blur-sm hover:bg-black/60 transition-all duration-200 focus:outline-none focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-white"
       >
         <svg
           aria-hidden="true"
