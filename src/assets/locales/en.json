@@ -107,7 +107,7 @@
       "dmca": "DMCA",
       "discover": "Discover",
       "support": "Support",
-      "login": "Login",
+      "login": "Board the Ship",
       "onboarding": "Setup",
       "pagetitle": "{{title}} — Datta-Flix",
       "register": "Register",
@@ -131,7 +131,7 @@
       "loading": "Loading...",
       "noResults": "We couldn't find anything :(",
       "placeholder": {
-        "default": "What do you want to watch?",
+        "default": "Chart yer course through cinema...",
         "extra": [
           "What are you in the mood for?",
           "Should we delete your browser history?",
@@ -145,12 +145,12 @@
         ]
       },
       "empty": {
-        "default": "Welcome, find media to watch here!",
+        "default": "Yer chart be empty, matey!",
         "extra": [
-          "There's nothing here :(",
-          "So empty...",
-          "Such emptiness.",
-          "Hi new user :3"
+          "Nothing in the hold yet...",
+          "The seas be empty here...",
+          "No treasure found, savvy?",
+          "Even Davy Jones had more..."
         ]
       },
       "sectionTitle": "Search results",
@@ -209,7 +209,11 @@
       "settings": "Settings",
       "support": "Support",
       "discover": "Discover"
-    }
+    },
+    "home": "The Harbor",
+    "discover": "Explore the Seas",
+    "search": "Chart Yer Course",
+    "watchlist": "Yer Treasure Chest"
   },
   "notFound": {
     "badge": "Not found",
