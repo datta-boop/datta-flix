@@ -67,11 +67,11 @@ export default defineConfig(({ mode }) => {
           "safari-pinned-tab.svg",
         ],
         manifest: {
-          name: "sudo-flix",
-          short_name: "sudo-flix",
-          description: "Watch your favorite shows and movies for free with no ads ever! (っ'ヮ'c)",
-          theme_color: "#120f1d",
-          background_color: "#120f1d",
+          name: "Datta-Flix",
+          short_name: "Datta-Flix",
+          description: "Watch your favorite shows and movies for free with no ads ever!",
+          theme_color: "#090D1C",
+          background_color: "#090D1C",
           display: "standalone",
           start_url: "/",
           icons: [

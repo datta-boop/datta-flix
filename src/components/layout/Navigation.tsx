@@ -5,9 +5,7 @@ import { NoUserAvatar, UserAvatar } from "@/components/Avatar";
 import { IconPatch } from "@/components/buttons/IconPatch";
 import { Icons } from "@/components/Icon";
 import { LinksDropdown } from "@/components/LinksDropdown";
-import { Lightbar } from "@/components/utils/Lightbar";
 import { useAuth } from "@/hooks/auth/useAuth";
-import { BlurEllipsis } from "@/pages/layouts/SubPageLayout";
 import { conf } from "@/setup/config";
 import { useBannerSize } from "@/stores/banner";
 
@@ -23,6 +21,7 @@ export function Navigation(props: NavigationProps) {
   const bannerHeight = useBannerSize();
   const navigate = useNavigate();
   const { loggedIn } = useAuth();
+  const bg = props.bg || props.doBackground;
 
   const handleClick = (path: To) => {
     window.scrollTo(0, 0);
@@ -31,63 +30,41 @@ export function Navigation(props: NavigationProps) {
 
   return (
     <>
-      {/* lightbar */}
-      {!props.noLightbar ? (
+      {/* Subtle gold shimmer line */}
+      {!props.noLightbar && (
         <div
-          className="absolute inset-x-0 top-0 flex h-[88px] items-center justify-center"
-          style={{
-            top: `${bannerHeight}px`,
-          }}
+          className="absolute inset-x-0 top-0 pointer-events-none z-10"
+          style={{ top: `${bannerHeight}px` }}
         >
-          <div className="absolute inset-x-0 -mt-[22%] flex items-center sm:mt-0">
-            <Lightbar />
-          </div>
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D4A843]/30 to-transparent animate-gold-pulse" />
         </div>
-      ) : null}
+      )}
 
-      {/* backgrounds - these are seperate because of z-index issues */}
+      {/* Scroll background */}
       <div
-        className="fixed z-[20] pointer-events-none left-0 right-0 top-0 min-h-[150px]"
-        style={{
-          top: `${bannerHeight}px`,
-        }}
+        className="fixed z-[20] pointer-events-none left-0 right-0 top-0"
+        style={{ top: `${bannerHeight}px` }}
       >
         <div
           className={classNames(
-            "fixed left-0 right-0 h-20 flex items-center",
-            props.doBackground
-              ? "bg-background-main border-b border-utils-divider border-opacity-50"
-              : null,
+            "fixed left-0 right-0 h-20 transition-all duration-300",
+            bg
+              ? "bg-[#090D1C]/90 backdrop-blur-md border-b border-[#D4A843]/10"
+              : "",
           )}
-        >
-          {props.doBackground ? (
-            <div className="absolute w-full h-full inset-0 overflow-hidden">
-              <BlurEllipsis positionClass="absolute" />
-            </div>
-          ) : null}
-          <div className="opacity-0 absolute inset-0 block h-20 pointer-events-auto" />
-          <div
-            className={`${
-              props.bg ? "opacity-100" : "opacity-0"
-            } absolute inset-0 block h-24 bg-background-main transition-opacity duration-300`}
-          >
-            <div className="absolute -bottom-24 h-24 w-full bg-gradient-to-b from-background-main to-transparent" />
-          </div>
-        </div>
+        />
       </div>
 
-      {/* content */}
+      {/* Nav items */}
       <div
-        className="fixed pointer-events-none left-0 right-0 z-[60] top-0 min-h-[150px]"
-        style={{
-          top: `${bannerHeight}px`,
-        }}
+        className="fixed pointer-events-none left-0 right-0 z-[60] top-0"
+        style={{ top: `${bannerHeight}px` }}
       >
-        <div className={classNames("fixed left-0 right-0 flex items-center")}>
-          <div className="px-7 py-5 relative z-[60] flex flex-1 items-center justify-between">
-            <div className="flex items-center space-x-1.5 ssm:space-x-3 pointer-events-auto">
+        <div className="fixed left-0 right-0 flex items-center h-20">
+          <div className="px-4 sm:px-8 lg:px-12 w-full flex items-center justify-between pointer-events-auto">
+            <div className="flex items-center gap-2 ssm:gap-3">
               <Link
-                className="block tabbable rounded-full text-xs ssm:text-base"
+                className="block tabbable rounded-full"
                 to="/"
                 onClick={() => window.scrollTo(0, 0)}
               >
@@ -97,7 +74,8 @@ export function Navigation(props: NavigationProps) {
                 href={conf().DISCORD_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xl text-white tabbable rounded-full"
+                className="text-warm-400 hover:text-[#D4A843] tabbable rounded-full transition-colors"
+                aria-label="Discord"
               >
                 <IconPatch icon={Icons.DISCORD} clickable downsized />
               </a>
@@ -105,19 +83,22 @@ export function Navigation(props: NavigationProps) {
                 href={conf().GITHUB_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xl text-white tabbable rounded-full"
+                className="text-warm-400 hover:text-[#D4A843] tabbable rounded-full transition-colors"
+                aria-label="GitHub"
               >
                 <IconPatch icon={Icons.GITHUB} clickable downsized />
               </a>
-              <a
+              <button
+                type="button"
                 onClick={() => handleClick("/discover")}
-                rel="noreferrer"
-                className="text-xl text-white tabbable rounded-full"
+                className="text-warm-400 hover:text-[#D4A843] tabbable rounded-full transition-colors"
+                aria-label="Discover"
               >
                 <IconPatch icon={Icons.RISING_STAR} clickable downsized />
-              </a>
+              </button>
             </div>
-            <div className="relative pointer-events-auto">
+
+            <div className="relative">
               <LinksDropdown>
                 {loggedIn ? <UserAvatar withName /> : <NoUserAvatar />}
               </LinksDropdown>
