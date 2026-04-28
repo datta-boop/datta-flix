@@ -1,22 +1,21 @@
 window.__CONFIG__ = {
-  // The URL for the CORS proxy, the URL must NOT end with a slash!
-  // If not specified, the onboarding will not allow a "default setup". The user will have to use the extension or set up a proxy themselves
-  VITE_CORS_PROXY_URL: "",
+  // CORS proxy: points to the Vercel Edge Function bundled with this deployment.
+  // Uses window.location.origin so it works on any domain without hardcoding.
+  VITE_CORS_PROXY_URL: window.location.origin + "/api/proxy",
 
-  VITE_BACKEND_URL: "https://server.vidbinge.com",
+  // TMDB Read Access Token (public, read-only)
+  VITE_TMDB_READ_API_KEY:
+    "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOTZhNWM5ZDc3MDFkMGM1NDE2OWExNmRlODlhYzdmZSIsIm5iZiI6MTY3MDU2OTA0MS45NDgsInN1YiI6IjYzOTJkYzUxZjA0ZDAxMDA3ZTA3MjU5NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RO5QI4FRxpl7H3EoT-LKX2O-NS_79Xg9ByWGAt3tiiw",
 
-  // The READ API key to access TMDB
-  VITE_TMDB_READ_API_KEY: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NzlkZWYyZDY5ZWFlNDk4ZjJiOTI4MTgyNDdjM2ViMCIsInN1YiI6IjY2MjdmMGJlNjJmMzM1MDE0YmQ4NTFmMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.h3KpPvkiaz8uNz1bntAKqsPrxG_4UUWaY3kYME6N6m8",
-
-  // The DMCA email displayed in the footer, null to hide the DMCA link
-  VITE_DMCA_EMAIL: null,
-
-  // Whether to disable hash-based routing, leave this as false if you don't know what this is
-  VITE_NORMAL_ROUTER: true,
-
-  // The backend URL to communicate with
+  // Backend sync server (null = disabled, users can add their own)
   VITE_BACKEND_URL: null,
 
-  // A comma separated list of disallowed IDs in the case of a DMCA claim - in the format "series-<id>" and "movie-<id>"
-  VITE_DISALLOWED_IDS: ""
+  // DMCA contact email (null = hide footer link)
+  VITE_DMCA_EMAIL: null,
+
+  // Use history-mode routing (required for Vercel SPA rewrites)
+  VITE_NORMAL_ROUTER: true,
+
+  // Comma-separated list of DMCA-blocked media IDs, e.g. "movie-12345,series-67890"
+  VITE_DISALLOWED_IDS: "",
 };
