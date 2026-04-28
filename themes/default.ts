@@ -33,65 +33,6 @@ const tokens = {
       c400: "#701B2B",
     },
   },
-
-  // Pirate Ocean palette — deep sea blues for the base UI
-  ocean: {
-    c50: "#7EC8E3",
-    c100: "#50AACF",
-    c200: "#2F8AB8",
-    c300: "#1A6A9A",
-    c400: "#0E507B",
-    c500: "#093A5C",
-    c600: "#062C47",
-    c700: "#041F33",
-    c800: "#021422",
-    c900: "#010B15",
-  },
-
-  // Treasure Gold
-  gold: {
-    c50: "#FFF0A0",
-    c100: "#FFE060",
-    c200: "#F5C518",
-    c300: "#D4A20F",
-    c400: "#A87E0A",
-    c500: "#7E5E07",
-    c600: "#574205",
-    c700: "#3A2C03",
-    c800: "#231A01",
-    c900: "#120D01",
-  },
-
-  // Deep navy — backgrounds, surfaces, cards
-  navy: {
-    c25: "#5A7AA0",
-    c50: "#3A5C80",
-    c100: "#2A4464",
-    c200: "#1C3050",
-    c300: "#12233C",
-    c400: "#0D1B2E",
-    c500: "#09121F",
-    c600: "#060C16",
-    c700: "#040810",
-    c800: "#02050A",
-    c900: "#010304",
-  },
-
-  // Rum Red — pirate danger/accent
-  rum: {
-    c50: "#FF9090",
-    c100: "#E05A5A",
-    c200: "#C0392B",
-    c300: "#A02F24",
-    c400: "#80231B",
-    c500: "#601812",
-    c600: "#45110E",
-    c700: "#2E0B09",
-    c800: "#1B0605",
-    c900: "#0A0303",
-  },
-
-  // Legacy tokens kept for sub-theme compatibility
   blue: {
     c50: "#ADADF5",
     c100: "#7979CC",
@@ -129,17 +70,17 @@ const tokens = {
     c900: "#0C1216",
   },
   shade: {
-    c25: "#5A7AA0",
-    c50: "#3A5C80",
-    c100: "#2A4464",
-    c200: "#1C3050",
-    c300: "#12233C",
-    c400: "#0D1B2E",
-    c500: "#09121F",
-    c600: "#060C16",
-    c700: "#040810",
-    c800: "#02050A",
-    c900: "#010304",
+    c25: "#5d5db3",
+    c50: "#676790",
+    c100: "#52527A",
+    c200: "#3F3F60",
+    c300: "#32324F",
+    c400: "#272741",
+    c500: "#1E1E32",
+    c600: "#171728",
+    c700: "#131322",
+    c800: "#0F0F1B",
+    c900: "#0A0A12",
   },
 };
 
@@ -147,249 +88,250 @@ export const defaultTheme = {
   extend: {
     colors: {
       themePreview: {
-        primary: tokens.ocean.c300,
-        secondary: tokens.navy.c25,
+        primary: tokens.blue.c200,
+        secondary: tokens.shade.c50,
         ghost: tokens.white,
       },
 
       // Branding
       pill: {
-        background: tokens.navy.c300,
-        backgroundHover: tokens.navy.c200,
-        highlight: tokens.ocean.c300,
-        activeBackground: tokens.navy.c300,
+        background: tokens.shade.c300,
+        backgroundHover: tokens.shade.c200,
+        highlight: tokens.blue.c200,
+
+        activeBackground: tokens.shade.c300,
       },
 
       // meta data for the theme itself
       global: {
-        accentA: tokens.ocean.c300,
-        accentB: tokens.ocean.c400,
+        accentA: tokens.blue.c200,
+        accentB: tokens.blue.c300,
       },
 
       // light bar
       lightBar: {
-        light: tokens.ocean.c400,
+        light: tokens.blue.c400,
       },
 
       // Buttons
       buttons: {
-        toggle: tokens.ocean.c400,
-        toggleDisabled: tokens.navy.c100,
-        danger: tokens.rum.c200,
-        dangerHover: tokens.rum.c300,
+        toggle: tokens.purple.c300,
+        toggleDisabled: tokens.ash.c500,
+        danger: tokens.semantic.rose.c300,
+        dangerHover: tokens.semantic.rose.c200,
 
-        secondary: tokens.navy.c300,
-        secondaryText: "#8BAAC0",
-        secondaryHover: tokens.navy.c200,
+        secondary: tokens.ash.c700,
+        secondaryText: tokens.semantic.silver.c300,
+        secondaryHover: tokens.ash.c700,
         primary: tokens.white,
-        primaryText: tokens.navy.c500,
-        primaryHover: "#B0C8DC",
-        purple: tokens.ocean.c500,
-        purpleHover: tokens.ocean.c400,
-        cancel: tokens.navy.c200,
-        cancelHover: tokens.navy.c100,
+        primaryText: tokens.black,
+        primaryHover: tokens.semantic.silver.c100,
+        purple: tokens.purple.c500,
+        purpleHover: tokens.purple.c400,
+        cancel: tokens.ash.c500,
+        cancelHover: tokens.ash.c300,
       },
 
       // only used for body colors/textures
       background: {
-        main: tokens.navy.c500,
-        secondary: tokens.navy.c400,
-        secondaryHover: tokens.navy.c300,
-        accentA: tokens.gold.c400,
-        accentB: tokens.ocean.c400,
+        main: tokens.shade.c900,
+        secondary: tokens.shade.c600,
+        secondaryHover: tokens.shade.c400,
+        accentA: tokens.purple.c500,
+        accentB: tokens.blue.c500,
       },
 
       // Modals
       modal: {
-        background: tokens.navy.c400,
+        background: tokens.shade.c800,
       },
 
       // typography
       type: {
-        logo: tokens.ocean.c200,
+        logo: tokens.purple.c100,
         emphasis: tokens.white,
-        text: "#B0C8DC",
-        dimmed: "#8BAAC0",
-        divider: tokens.navy.c100,
-        secondary: tokens.navy.c25,
-        danger: tokens.rum.c100,
+        text: tokens.shade.c50,
+        dimmed: tokens.shade.c50,
+        divider: tokens.ash.c500,
+        secondary: tokens.ash.c100,
+        danger: tokens.semantic.red.c100,
         success: tokens.semantic.green.c100,
-        link: tokens.ocean.c200,
-        linkHover: tokens.ocean.c100,
+        link: tokens.purple.c100,
+        linkHover: tokens.purple.c50,
       },
 
       // search bar
       search: {
-        background: tokens.navy.c400,
-        hoverBackground: tokens.navy.c300,
-        focused: tokens.navy.c200,
-        placeholder: tokens.navy.c25,
-        icon: tokens.navy.c25,
+        background: tokens.shade.c500,
+        hoverBackground: tokens.shade.c600,
+        focused: tokens.shade.c400,
+        placeholder: tokens.shade.c100,
+        icon: tokens.shade.c100,
         text: tokens.white,
       },
 
       // media cards
       mediaCard: {
-        hoverBackground: tokens.navy.c300,
-        hoverAccent: tokens.ocean.c200,
-        hoverShadow: tokens.navy.c500,
-        shadow: tokens.navy.c400,
-        barColor: tokens.navy.c200,
-        barFillColor: tokens.ocean.c200,
-        badge: tokens.navy.c300,
-        badgeText: "#B0C8DC",
+        hoverBackground: tokens.shade.c600,
+        hoverAccent: tokens.shade.c25,
+        hoverShadow: tokens.shade.c900,
+        shadow: tokens.shade.c700,
+        barColor: tokens.ash.c200,
+        barFillColor: tokens.purple.c100,
+        badge: tokens.shade.c700,
+        badgeText: tokens.ash.c100,
       },
 
       // Large card
       largeCard: {
-        background: tokens.navy.c300,
-        icon: tokens.ocean.c300,
+        background: tokens.shade.c600,
+        icon: tokens.purple.c400,
       },
 
       // Dropdown
       dropdown: {
-        background: tokens.navy.c400,
-        altBackground: tokens.navy.c500,
-        hoverBackground: tokens.navy.c300,
-        highlight: tokens.gold.c300,
-        highlightHover: tokens.gold.c200,
-        text: "#B0C8DC",
-        secondary: "#8BAAC0",
-        border: tokens.navy.c200,
-        contentBackground: tokens.navy.c300,
+        background: tokens.shade.c600,
+        altBackground: tokens.shade.c700,
+        hoverBackground: tokens.shade.c500,
+        highlight: tokens.semantic.yellow.c400,
+        highlightHover: tokens.semantic.yellow.c200,
+        text: tokens.shade.c50,
+        secondary: tokens.shade.c100,
+        border: tokens.shade.c400,
+        contentBackground: tokens.shade.c500,
       },
 
       // Passphrase
       authentication: {
-        border: tokens.navy.c200,
-        inputBg: tokens.navy.c400,
-        inputBgHover: tokens.navy.c300,
-        wordBackground: tokens.navy.c300,
-        copyText: "#8BAAC0",
-        copyTextHover: "#B0C8DC",
-        errorText: tokens.rum.c100,
+        border: tokens.shade.c300,
+        inputBg: tokens.shade.c600,
+        inputBgHover: tokens.shade.c500,
+        wordBackground: tokens.shade.c500,
+        copyText: tokens.shade.c100,
+        copyTextHover: tokens.ash.c50,
+        errorText: tokens.semantic.rose.c100,
       },
 
       // Settings page
       settings: {
         sidebar: {
-          activeLink: tokens.navy.c300,
-          badge: tokens.navy.c500,
+          activeLink: tokens.shade.c600,
+          badge: tokens.shade.c900,
 
           type: {
-            secondary: tokens.navy.c25,
-            inactive: tokens.navy.c25,
-            icon: tokens.navy.c25,
-            iconActivated: tokens.ocean.c300,
-            activated: tokens.ocean.c200,
+            secondary: tokens.shade.c200,
+            inactive: tokens.shade.c50,
+            icon: tokens.shade.c50,
+            iconActivated: tokens.purple.c200,
+            activated: tokens.purple.c50,
           },
         },
 
         card: {
-          border: tokens.navy.c200,
-          background: tokens.navy.c300,
-          altBackground: tokens.navy.c300,
+          border: tokens.shade.c400,
+          background: tokens.shade.c400,
+          altBackground: tokens.shade.c400,
         },
 
         saveBar: {
-          background: tokens.navy.c500,
+          background: tokens.shade.c800,
         },
       },
 
       // Utilities
       utils: {
-        divider: tokens.navy.c100,
+        divider: tokens.ash.c300,
       },
 
       // Onboarding
       onboarding: {
-        bar: tokens.navy.c200,
-        barFilled: tokens.ocean.c300,
-        divider: tokens.navy.c100,
-        card: tokens.navy.c400,
-        cardHover: tokens.navy.c300,
-        border: tokens.navy.c200,
-        good: tokens.ocean.c200,
-        best: tokens.gold.c300,
-        link: tokens.ocean.c200,
+        bar: tokens.shade.c400,
+        barFilled: tokens.purple.c300,
+        divider: tokens.shade.c200,
+        card: tokens.shade.c800,
+        cardHover: tokens.shade.c700,
+        border: tokens.shade.c600,
+        good: tokens.purple.c100,
+        best: tokens.semantic.yellow.c100,
+        link: tokens.purple.c100,
       },
 
       // Error page
       errors: {
-        card: tokens.navy.c400,
-        border: tokens.navy.c100,
+        card: tokens.shade.c800,
+        border: tokens.ash.c500,
 
         type: {
-          secondary: "#8BAAC0",
+          secondary: tokens.ash.c100,
         },
       },
 
       // About page
       about: {
-        circle: tokens.navy.c200,
-        circleText: "#8BAAC0",
+        circle: tokens.ash.c500,
+        circleText: tokens.ash.c50,
       },
 
-      // Edit badge
+      // About page
       editBadge: {
-        bg: tokens.navy.c200,
-        bgHover: tokens.navy.c100,
-        text: "#B0C8DC",
+        bg: tokens.ash.c500,
+        bgHover: tokens.ash.c400,
+        text: tokens.ash.c50,
       },
 
       progress: {
-        background: "#8BAAC0",
-        preloaded: "#8BAAC0",
-        filled: tokens.ocean.c300,
+        background: tokens.ash.c50,
+        preloaded: tokens.ash.c50,
+        filled: tokens.purple.c200,
       },
 
       // video player
       video: {
-        buttonBackground: tokens.navy.c100,
+        buttonBackground: tokens.ash.c200,
 
         autoPlay: {
-          background: tokens.navy.c400,
-          hover: tokens.navy.c200,
+          background: tokens.ash.c700,
+          hover: tokens.ash.c500,
         },
 
         scraping: {
-          card: tokens.navy.c400,
-          error: tokens.rum.c200,
+          card: tokens.shade.c700,
+          error: tokens.semantic.red.c200,
           success: tokens.semantic.green.c200,
-          loading: tokens.ocean.c300,
-          noresult: "#8BAAC0",
+          loading: tokens.purple.c200,
+          noresult: tokens.ash.c100,
         },
 
         audio: {
-          set: tokens.ocean.c200,
+          set: tokens.purple.c200,
         },
 
         context: {
-          background: tokens.navy.c500,
-          light: "#B0C8DC",
-          border: tokens.navy.c200,
-          hoverColor: tokens.navy.c200,
-          buttonFocus: tokens.navy.c100,
-          flagBg: tokens.navy.c200,
-          inputBg: tokens.navy.c300,
-          buttonOverInputHover: tokens.navy.c100,
-          inputPlaceholder: "#8BAAC0",
-          cardBorder: tokens.navy.c200,
-          slider: "#8BAAC0",
-          sliderFilled: tokens.ocean.c300,
-          error: tokens.rum.c100,
+          background: tokens.ash.c900,
+          light: tokens.shade.c50,
+          border: tokens.ash.c600,
+          hoverColor: tokens.ash.c600,
+          buttonFocus: tokens.ash.c500,
+          flagBg: tokens.ash.c500,
+          inputBg: tokens.ash.c600,
+          buttonOverInputHover: tokens.ash.c500,
+          inputPlaceholder: tokens.ash.c200,
+          cardBorder: tokens.ash.c700,
+          slider: tokens.ash.c50,
+          sliderFilled: tokens.purple.c200,
+          error: tokens.semantic.red.c200,
 
           buttons: {
-            list: tokens.navy.c200,
-            active: tokens.navy.c500,
+            list: tokens.ash.c700,
+            active: tokens.ash.c900,
           },
 
-          closeHover: tokens.navy.c100,
+          closeHover: tokens.ash.c800,
 
           type: {
-            main: "#B0C8DC",
-            secondary: "#8BAAC0",
-            accent: tokens.ocean.c200,
+            main: tokens.semantic.silver.c400,
+            secondary: tokens.ash.c200,
+            accent: tokens.purple.c200,
           },
         },
       },
